@@ -6,20 +6,16 @@ public class Q4{
         int n1 = sc.nextInt();
         System.out.print("Enter second number: ");
         int n2 = sc.nextInt();
-        int maxdiv = 0, result = n1;
+        int max = 0, div = 0;
         for (int i = n1; i <= n2; i++){
-            int count = 0;
             for (int j = 1; j <= i/2; j++) {
                 if (i%j==0)
-                    count++;
+                    div++;
             }
-            if (count > maxdiv || count == maxdiv && result < i){
-                maxdiv = count;
-                result = i;
-            }    
+            if (max < div)
+                max = div;
         }
-        System.out.println("The number with the most divisors is "+result);
-        System.out.println("NUmber of divisors: "+maxdiv);
+        System.out.println(max);
         sc.close();
     }
 }
